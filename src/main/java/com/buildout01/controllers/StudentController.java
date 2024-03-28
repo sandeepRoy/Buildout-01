@@ -19,7 +19,7 @@ public class StudentController {
 
     @GetMapping("/user")
     public ResponseEntity<List<Student>> getAllStudents() {
-        List<Student> allStudents = studentService.getAllStudents();
+        List<Student> allStudents = studentService.getAllStudentsLowToHigh();
         return new ResponseEntity<>(allStudents, HttpStatus.OK);
     }
 

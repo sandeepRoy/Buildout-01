@@ -7,8 +7,8 @@ import com.buildout01.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class StudentService {
@@ -16,9 +16,18 @@ public class StudentService {
     private StudentRepository studentRepository;
 
     // GET - List<Student>
-    public List<Student> getAllStudents() {
+    public List<Student> getAllStudentsLowToHigh() {
+        List<Student> sorted = new ArrayList<>();
         List<Student> all = studentRepository.findAll();
-        return all;
+
+        int max = 0;
+        for(Student student : all){
+            if(student.getScore() > max){
+                max = Math.max(max, student.getScore());
+                sorted.add(student);
+            }
+        }
+        return sorted;
     }
 
     // GET - Student by ID
