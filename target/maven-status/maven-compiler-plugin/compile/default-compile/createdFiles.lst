@@ -1,0 +1,7 @@
+com/buildout01/dtos/UpdateScoreDto.class
+com/buildout01/repositories/StudentRepository.class
+com/buildout01/services/StudentService.class
+com/buildout01/Buildout01Application.class
+com/buildout01/entities/Student.class
+com/buildout01/dtos/CreateStudentDto.class
+com/buildout01/controllers/StudentController.class
